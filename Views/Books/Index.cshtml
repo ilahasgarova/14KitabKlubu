@@ -1,0 +1,70 @@
+@model List<KitabKlubu.Models.Book>
+    @{
+    ViewData["Title"] = "Rəfdən Rəfə";
+    ViewData["MetaDescription"] = "İkinci əl kitablar, kitab paylaşımı və satışı — Rəfdən Rəfə bölməsində kitabını paylaş və ya al.";
+}
+<div class="hero-box p-4 mb-4 text-center">
+    <h1 class="display-6 fw-bold mb-3">Rəfdən Rəfə</h1>
+    <p class="col-md-8 mx-auto fs-5 text-light opacity-75 mb-4">
+        Oxunmuş kitablar rəfdə toz basmasın. Paylaşılan hər kitab yeni bir oxucuya yol açır.
+    </p>
+    <a href="/Books/Submit" class="btn btn-book-primary px-4">Öz Kitabını Yerləşdir</a>
+</div>
+  <div class="book-card p-3 mb-4">
+    <form method="get" action="/Books" class="d-flex gap-2 flex-wrap">
+        <input type="text" name="axtaris" value="@ViewBag.Axtaris" class="form-control" placeholder="Kitab adı və ya müəllif axtar..." style="max-width: 400px;" />
+        <button type="submit" class="btn btn-book-primary">Axtar</button>
+        @if (!string.IsNullOrWhiteSpace((string)ViewBag.Axtaris))
+        {
+            <a href="/Books" class="btn btn-outline-light">Təmizlə</a>
+        }
+    </form>
+</div>
+
+<div class="row g-4 mb-5">
+    @if (Model.Count == 0)
+    {
+        <div class="col-12">
+            <div class="book-card p-4 text-center">
+                <p class="text-secondary mb-0">Hələ kitab yoxdur. İlk olan sən ol!</p>
+            </div>
+        </div>
+        @if ((int)ViewBag.CemiSehife > 1)
+{
+    <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+        @for (int i = 1; i <= (int)ViewBag.CemiSehife; i++)
+        {
+            var aktivMi = i == (int)ViewBag.CariSehife;
+            <a href="/Books?axtaris=@ViewBag.Axtaris&page=@i"
+               class="btn @(aktivMi ? "btn-book-primary" : "btn-outline-light") btn-sm">
+                @i
+            </a>
+        }
+    </div>
+}
+    }
+           @foreach (var kitab in Model)
+    {
+        <div class="col-md-4">
+            <a href="/Books/Detail/@kitab.Id" class="text-decoration-none">
+            <div class="book-card p-4 h-100">
+                @if (!string.IsNullOrWhiteSpace(kitab.ImageUrl))
+                {
+                    <img src="@kitab.ImageUrl" alt="@kitab.Title" class="img-fluid rounded mb-3" style="max-height:200px; object-fit:cover; width:100%;" />
+                }
+                <h3 class="h5 fw-bold mb-1 text-danger">@kitab.Title</h3>
+                <p class="text-secondary small mb-2">@kitab.Author</p>
+                <p class="text-light opacity-75 small mb-2">@kitab.Description</p>
+                @if (!string.IsNullOrWhiteSpace(kitab.Price))
+                {
+                    <p class="fw-bold text-light mb-2">@kitab.Price AZN</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(kitab.ContactInfo))
+                {
+                    <p class="text-secondary small mb-0">📞 @kitab.ContactInfo</p>
+                }
+             </div>
+            </a>
+        </div>
+    }
+</div>

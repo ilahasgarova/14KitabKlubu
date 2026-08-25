@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Məqalə Əlavə Et";
+}
+
+<div class="hero-box p-4 mb-4">
+    <a href="/Admin/Articles" class="text-secondary small text-decoration-none">← Məqalələrə qayıt</a>
+    <h1 class="h3 fw-bold mt-2 mb-0">Məqalə Əlavə Et</h1>
+</div>
+
+<div class="book-card p-4 mb-5">
+    <form method="post" action="/Admin/AddArticle">
+        <div class="mb-3">
+            <label class="form-label text-light">İkon (emoji)</label>
+            <input type="text" name="Icon" class="form-control" placeholder="📖" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Başlıq</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qısa xülasə</label>
+            <textarea name="Summary" class="form-control" rows="2" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Tam mətn</label>
+            <textarea name="Content" class="form-control" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-book-primary px-4">Əlavə Et</button>
+    </form>
+</div>

@@ -1,0 +1,47 @@
+@model KitabKlubu.Models.Book
+@{
+    ViewData["Title"] = "Kitabı Redaktə Et";
+}
+
+<div class="hero-box p-4 mb-4">
+    <a href="/Admin" class="text-secondary small text-decoration-none">← Admin Panelə qayıt</a>
+    <h1 class="h3 fw-bold mt-2 mb-0">Kitabı Redaktə Et</h1>
+</div>
+
+<div class="book-card p-4 mb-5">
+    <form method="post" action="/Admin/Edit">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="IsApproved" value="@Model.IsApproved" />
+        <input type="hidden" name="DateAdded" value="@Model.DateAdded" />
+
+        <div class="mb-3">
+            <label class="form-label text-light">Kitabın adı</label>
+            <input type="text" name="Title" class="form-control" value="@Model.Title" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Müəllif</label>
+            <input type="text" name="Author" class="form-control" value="@Model.Author" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qiymət (AZN)</label>
+            <input type="text" name="Price" class="form-control" value="@Model.Price" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qısa qeyd</label>
+            <textarea name="Description" class="form-control" rows="3">@Model.Description</textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Şəkil linki (URL)</label>
+            <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Kim əlavə edib</label>
+            <input type="text" name="SubmittedBy" class="form-control" value="@Model.SubmittedBy" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Əlaqə</label>
+            <input type="text" name="ContactInfo" class="form-control" value="@Model.ContactInfo" />
+        </div>
+        <button type="submit" class="btn btn-book-primary px-4">Yadda Saxla</button>
+    </form>
+</div>

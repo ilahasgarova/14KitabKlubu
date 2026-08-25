@@ -1,0 +1,29 @@
+@model IEnumerable<KitabKlubu.Models.Article>
+@{
+    ViewData["Title"] = "Məqalələr";
+    ViewData["MetaDescription"] = "14 Kitab Klubundan ədəbiyyat təhlilləri, oxucu qeydləri və kitab dünyasından faydalı yazılar.";
+}
+
+<div class="container my-5">
+    <h1 class="text-center text-light mb-5">Məqalələr</h1>
+    
+    <div class="row g-4">
+        @foreach (var article in Model)
+        {
+            <div class="col-md-6">
+                <!-- Buradakı 'book-card' sinfini ana səhifədə necə yazmısınızsa, elə saxlayın -->
+                <div class="book-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="fs-2 me-3">@article.Icon</span>
+                        <a href="/Articles/Detail/@article.Id" class="text-decoration-none">
+                            <h3 class="h5 fw-bold text-danger m-0">@article.Title</h3>
+                        </a>
+                    </div>
+                    <p class="text-secondary small mb-2">@article.Date</p>
+                    <p class="text-light opacity-75 mb-4">@article.Summary</p>
+                    <a href="/Articles/Detail/@article.Id" class="btn btn-outline-danger">Daha ətraflı</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

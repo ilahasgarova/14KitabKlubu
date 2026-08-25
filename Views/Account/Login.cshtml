@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Admin Girişi";
+    Layout = "_Layout";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="book-card p-4 mt-5">
+            <h3 class="text-danger fw-bold mb-4 text-center">Admin Girişi</h3>
+
+            @if (ViewBag.Xeta != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Xeta</div>
+            }
+
+            <form method="post" action="/Account/Login">
+                <div class="mb-3">
+                    <label class="form-label text-light">İstifadəçi adı</label>
+                    <input type="text" name="istifadeciAdi" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">Parol</label>
+                    <input type="password" name="parol" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-book-primary w-100">Daxil ol</button>
+            </form>
+        </div>
+    </div>
+</div>

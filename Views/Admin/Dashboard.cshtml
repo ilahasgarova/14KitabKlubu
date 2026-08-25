@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="hero-box p-4 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <h1 class="h3 fw-bold mb-0">Dashboard</h1>
+    <a href="/Account/Logout" class="btn btn-outline-danger">Çıxış</a>
+</div>
+
+<!-- STATİSTİKA KARTLARI -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3 col-6">
+        <div class="book-card p-4 text-center h-100">
+            <div class="fs-2 fw-bold text-danger">@ViewBag.CemiKitab</div>
+            <p class="text-secondary small mb-0">Cəmi kitab</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="book-card p-4 text-center h-100">
+            <div class="fs-2 fw-bold text-success">@ViewBag.TesdiqlenmisKitab</div>
+            <p class="text-secondary small mb-0">Təsdiqlənmiş</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="book-card p-4 text-center h-100">
+            <div class="fs-2 fw-bold text-warning">@ViewBag.GozleyenKitab</div>
+            <p class="text-secondary small mb-0">Gözləyən</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="book-card p-4 text-center h-100">
+            <div class="fs-2 fw-bold text-light">@ViewBag.CemiMeqale</div>
+            <p class="text-secondary small mb-0">Cəmi məqalə</p>
+        </div>
+    </div>
+</div>
+
+<!-- SÜRƏTLİ KEÇİDLƏR -->
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <a href="/Admin/Index" class="text-decoration-none">
+            <div class="book-card p-4 h-100">
+                <h3 class="h5 fw-bold mb-2 text-danger">📚 Kitabları İdarə Et</h3>
+                <p class="text-secondary small mb-0">Kitabları əlavə et, təsdiqlə, redaktə et və ya sil.</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="/Admin/Articles" class="text-decoration-none">
+            <div class="book-card p-4 h-100">
+                <h3 class="h5 fw-bold mb-2 text-danger">✍️ Məqalələri İdarə Et</h3>
+                <p class="text-secondary small mb-0">Məqalələri əlavə et, redaktə et və ya sil.</p>
+            </div>
+        </a>
+    </div>
+</div>

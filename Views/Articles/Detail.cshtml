@@ -1,0 +1,26 @@
+@model KitabKlubu.Models.Article
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-dark text-light border-danger p-4 shadow">
+                <div class="d-flex align-items-center mb-3">
+                    <span class="fs-1 me-3">@Model.Icon</span>
+                    <h1 class="h3 fw-bold text-danger m-0">@Model.Title</h1>
+                </div>
+                <p class="text-secondary small mb-4">@Model.Date</p>
+                <hr class="border-danger">
+                <p class="text-light opacity-85 lh-lg mb-4" style="font-size: 1.1rem;">
+                    @Model.Content
+                </p>
+                <div class="mt-4">
+                    <a href="/Articles" class="btn btn-outline-danger">← Geri qayıt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

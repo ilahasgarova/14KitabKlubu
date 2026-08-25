@@ -1,0 +1,41 @@
+@model KitabKlubu.Models.Book
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="hero-box p-4 mb-4">
+    <a href="/Books" class="text-secondary small text-decoration-none">← Rəfdən Rəfəyə qayıt</a>
+</div>
+
+<div class="row g-4 mb-5">
+    @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+    {
+        <div class="col-md-5">
+            <img src="@Model.ImageUrl" alt="@Model.Title" class="img-fluid rounded" style="width:100%; object-fit:cover;" />
+        </div>
+    }
+    <div class="col-md-@(string.IsNullOrWhiteSpace(Model.ImageUrl) ? "12" : "7")">
+        <div class="book-card p-4 h-100">
+            <h1 class="h3 fw-bold mb-2 text-danger">@Model.Title</h1>
+            <p class="text-secondary mb-3">@Model.Author</p>
+
+            @if (!string.IsNullOrWhiteSpace(Model.Price))
+            {
+                <p class="fs-5 fw-bold text-light mb-3">@Model.Price AZN</p>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <p class="text-light opacity-75 mb-4" style="line-height: 1.8;">@Model.Description</p>
+            }
+
+            <hr class="border-danger" />
+
+            <p class="text-secondary small mb-1">Paylaşan: @Model.SubmittedBy</p>
+            @if (!string.IsNullOrWhiteSpace(Model.ContactInfo))
+            {
+                <p class="text-secondary small mb-0">📞 Əlaqə: @Model.ContactInfo</p>
+            }
+        </div>
+    </div>
+</div>

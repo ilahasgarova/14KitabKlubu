@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Kitabını Yerləşdir";
+}
+
+<div class="hero-box p-4 mb-4 text-center">
+    <h1 class="display-6 fw-bold mb-3">Kitabını Yerləşdir</h1>
+    <p class="col-md-8 mx-auto fs-5 text-light opacity-75 mb-0">
+        Formu doldur, admin təsdiqləyəndən sonra kitabın Rəfdən Rəfə bölməsində görünəcək.
+    </p>
+</div>
+
+@if (ViewBag.Ugurlu == true)
+{
+    <div class="book-card p-4 mb-4 text-center">
+        <h3 class="text-danger fw-bold mb-2">Təşəkkür edirik! 🎉</h3>
+        <p class="text-secondary mb-0">Kitabın qeydə alındı, admin təsdiqləyəndən sonra saytda görünəcək.</p>
+    </div>
+}
+
+<div class="book-card p-4 mb-5">
+    <form method="post" action="/Books/Submit">
+        <div class="mb-3">
+            <label class="form-label text-light">Kitabın adı</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Müəllif</label>
+            <input type="text" name="Author" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qiymət (AZN, boş buraxa bilərsən pulsuzdursa)</label>
+            <input type="text" name="Price" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qısa qeyd</label>
+            <textarea name="Description" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Şəkil linki (URL, istəyə bağlı)</label>
+            <input type="text" name="ImageUrl" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Adınız</label>
+            <input type="text" name="SubmittedBy" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Əlaqə (telefon/instagram)</label>
+            <input type="text" name="ContactInfo" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-book-primary px-4">Göndər</button>
+    </form>
+</div>

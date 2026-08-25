@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Kitab Əlavə Et";
+}
+
+<div class="hero-box p-4 mb-4">
+    <a href="/Admin" class="text-secondary small text-decoration-none">← Admin Panelə qayıt</a>
+    <h1 class="h3 fw-bold mt-2 mb-0">Kitab Əlavə Et</h1>
+</div>
+
+<div class="book-card p-4 mb-5">
+    <form method="post" action="/Admin/AddBook">
+        <div class="mb-3">
+            <label class="form-label text-light">Kitabın adı</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Müəllif</label>
+            <input type="text" name="Author" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qiymət (AZN)</label>
+            <input type="text" name="Price" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Qısa qeyd</label>
+            <textarea name="Description" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Şəkil linki (URL)</label>
+            <input type="text" name="ImageUrl" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label text-light">Əlaqə</label>
+            <input type="text" name="ContactInfo" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-book-primary px-4">Əlavə Et</button>
+    </form>
+</div>
