@@ -1,5 +1,5 @@
-# Build mərhələsi
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# Build mərhələsi (.NET 10.0)
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 # Proqramın fayllarını köçürürük
@@ -9,12 +9,11 @@ RUN dotnet restore "KitabKlubu.csproj"
 COPY . .
 RUN dotnet publish -c Release -o /app/publish
 
-# Runtime (işə salma) mərhələsi
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+# Runtime mərhələsi (.NET 10.0)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Render üçün port tənzimləməsi
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
 
