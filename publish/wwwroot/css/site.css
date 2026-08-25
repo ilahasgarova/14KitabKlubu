@@ -1,0 +1,84 @@
+/* Ümumi tənzimləmələr */
+body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar (Header) */
+.navbar {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #dc3545 !important;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.navbar-brand img {
+    height: 45px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #dc3545 !important;
+}
+
+/* Footer */
+footer {
+    background-color: #000000 !important;
+    border-top: 2px solid #dc3545 !important;
+    width: 100%;
+}
+
+/* Düymələr (Rəflərə Bax və s.) */
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+.btn-danger:hover {
+    background-color: #b02a37 !important;
+    border-color: #a52834 !important;
+}
+
+/* Hero qutusu (Ana Səhifə) */
+.hero-box {
+    background-color: #0d0d0d;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(220, 53, 69, 0.15), 0 8px 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Kartlar (Rəfdən Rəfə, Oxucu Görüşləri, Məqalələr) */
+.book-card {
+    background-color: #0d0d0d;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.1), 0 8px 20px rgba(255, 255, 255, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(220, 53, 69, 0.3), 0 8px 25px rgba(255, 255, 255, 0.06);
+}
+
+/* "Rəflərə Bax" düyməsi */
+.btn-book-primary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+.btn-book-primary:hover {
+    background-color: #b02a37;
+    border-color: #a52834;
+    color: #ffffff;
+}
