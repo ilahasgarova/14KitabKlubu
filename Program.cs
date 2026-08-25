@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Serverdə və ya domenə bağlayarkən yol problemi yaşamamaq üçün tam yol (absolute path) təyin edilir
-var dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "KitabKlubu.db");
+var dbPath = "KitabKlubu.db";
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite($"Data Source={dbPath}"));
 
