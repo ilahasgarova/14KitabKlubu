@@ -12,14 +12,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-// Render-də cədvəllərin avtomatik yaradılması (EnsureCreated)
+// Render-də bazanın və cədvəllərin avtomatik yaranması üçün
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     try
     {
         var context = services.GetRequiredService<AppDbContext>();
-        context.Database.EnsureCreated(); // Bazanı və cədvəlləri avtomatik yaradır
+        context.Database.EnsureCreated();
     }
     catch (Exception ex)
     {
