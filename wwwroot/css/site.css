@@ -82,3 +82,25 @@ footer {
     border-color: #a52834;
     color: #ffffff;
 }
+
+/* Mobil menyunun səliqəli görünməsi üçün əlavə */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #000000 !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 2px solid #dc3545;
+        z-index: 1000;
+    }
+    
+    .navbar-nav {
+        text-align: left !important;
+    }
+    
+    .nav-item {
+        padding: 8px 0;
+    }
+}

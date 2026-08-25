@@ -21,14 +21,23 @@
                 <img src="~/images/logo.jpeg" alt="14 Kitab Klubu" />
                 <span class="fw-bold fs-4">14 Kitab Klubu</span>
             </a>
-        <div class="navbar-nav ms-auto gap-3">
-           <a class="nav-link text-light" href="/">Ana Səhifə</a>
-           <a class="nav-link text-light" href="/Home/About">Haqqımızda</a>
-           <a class="nav-link text-light" href="/Books">Rəfdən Rəfə</a>
-           <a class="nav-link text-light" href="/Articles">Məqalələr</a>
-           <a class="nav-link text-light" href="/Contact">Əlaqə</a>
+            
+            <!-- Mobil menyu düyməsi (Hamburger) -->
+            <button class="navbar-toggler border-light text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+
+            <!-- Açılıb-bağlanan menyu hissəsi -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto gap-3">
+                   <a class="nav-link text-light" href="/">Ana Səhifə</a>
+                   <a class="nav-link text-light" href="/Home/About">Haqqımızda</a>
+                   <a class="nav-link text-light" href="/Books">Rəfdən Rəfə</a>
+                   <a class="nav-link text-light" href="/Articles">Məqalələr</a>
+                   <a class="nav-link text-light" href="/Contact">Əlaqə</a>
+                </div>
+            </div>
         </div>
-    </div>
     </nav>
 
     <!-- CONTENT -->
